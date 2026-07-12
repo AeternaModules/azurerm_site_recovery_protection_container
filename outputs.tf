@@ -1,3 +1,7 @@
+output "site_recovery_protection_containers_id" {
+  description = "Map of id values across all site_recovery_protection_containers, keyed the same as var.site_recovery_protection_containers"
+  value       = { for k, v in azurerm_site_recovery_protection_container.site_recovery_protection_containers : k => v.id }
+}
 output "site_recovery_protection_containers_name" {
   description = "Map of name values across all site_recovery_protection_containers, keyed the same as var.site_recovery_protection_containers"
   value       = { for k, v in azurerm_site_recovery_protection_container.site_recovery_protection_containers : k => v.name }
